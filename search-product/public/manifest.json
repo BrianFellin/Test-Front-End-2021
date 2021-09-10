@@ -1,0 +1,20 @@
+{
+  "short_name": "Search Product",
+  "name": "Search Product App - Front End Test",
+  "icons": [
+    {
+      "src": "Logo_ML.png",
+      "sizes": "53x36",
+      "type": "image/png"
+    },
+    {
+      "src": "Logo_ML@2x.png.png",
+      "sizes": "106x72",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - Buscador de productos</title>
+    <link rel="icon" type="image/png" href="/api/file/Logo_ML.png" />
+
+    <style>
+        html, body {
+            padding: 0px; margin: 0px; width: 100%; height: 100%;color: #333333;
+        }
+
+        a {
+            color: #FFE600;
+        }
+
+        .navbar {
+            background: #FFE600;
+            padding: 10px 0px;
+        }
+
+        .img {
+            height: 30px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .title {
+            vertical-align: middle;
+            margin: 0;
+            display: inline-block;
+        }
+
+        .box {
+            padding: 10px;
+            background-color: #333333;
+            color: #ffffff;
+            height: calc(100% - 70px);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <img class="img" src="/api/file/Logo_ML.png" alt="Logo_ML">
+            <h3 class="title">
+                Servidor - Busqueda de producto - Prueba
+            </h3>
+        </div>
+    </header>
+    <section class="box">
+        <div>
+            <b>Pruebe los "Endpoints"</b>
+        </div>
+        <br>
+        <div>
+            <a target="_blank" href="/api/items?q=Prueba">Buscar productos</a>
+        </div>
+        <br>
+        <div>
+            <a target="_blank" href="/api/items/1">Obtener producto</a>
+        </div>
+        <br>
+        <div>
+            <a target="_blank" href="/api/items/1/description">Obtener descripción del producto</a>
+        </div>
+    </section>
+</body>
+
+</html>
