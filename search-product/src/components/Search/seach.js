@@ -3,6 +3,7 @@ import PropTypes, { string, any } from "prop-types";
 import Navbar from '../Navbar';
 import { withRouter } from 'react-router-dom';
 import ProductList from '../ProductList/productlist';
+import { SearchBox } from './search-styles';
 
 class Search extends Component {
     static propTypes = {
@@ -13,8 +14,10 @@ class Search extends Component {
     state = { searchResult: any, searchVal: string }
 
     findItems(search) {
-        return this._asyncRequest = fetch("api/items?q=" + search)
-            .then(response => { return response.json() })
+        this._asyncRequest = fetch("api/items?q=" + search)
+            .then(response => {
+                return response.json()
+            })
             .then(
                 externalData => {
                     this._asyncRequest = null;
@@ -30,7 +33,9 @@ class Search extends Component {
     componentWillMount() {
         this.unlisten = this.props.history.listen((location, action) => {
             let search = this.getSearchParam(location);
-            this._asyncRequest = this.findItems(search);
+            if(search){
+                this._asyncRequest = this.findItems(search);
+            }
         });
 
         let search = this.getSearchParam(this.props.location);
@@ -45,25 +50,17 @@ class Search extends Component {
     }
 
     render() {
-        const box = {
-            padding: '0 10%'
-        }
         if (this.state.searchResult) {
             if (this.state.searchResult.items) {
                 return (
                     <>
                         <div>
                             <Navbar />
-                            <div style={box}>
+                            <div style={SearchBox}>
                                 {this.state.searchResult.items.map((item, index) => (
-                                    <ProductList product={item} />
+                                    <ProductList key={item.id} product={item} />
                                 ))}
                             </div>
-                            {/* <div>
-                                <div>{this.state.searchVal.toString()}</div>
-                                <br />
-                                {JSON.stringify(this.state.searchResult)}
-                            </div> */}
                         </div>
                     </>
                 );

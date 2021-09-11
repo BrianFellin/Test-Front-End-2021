@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import SearchIcon from '../../assets/ic_Search.png';
-import { InputSearch, ButtonSearch } from './search-styles';
+import { InputSearch, ButtonSearch } from './searchbox-styles';
 import { withRouter } from 'react-router-dom';
 
 /**

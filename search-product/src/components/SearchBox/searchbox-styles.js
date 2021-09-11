@@ -6,7 +6,8 @@ export const InputSearch = {
     marginLeft: '25px',
     fontSize: '18px',
     width: '70%',
-    padding: '0 20px'
+    padding: '0 20px',
+    color: '#666666'
 };
 
 export const ButtonSearch = {

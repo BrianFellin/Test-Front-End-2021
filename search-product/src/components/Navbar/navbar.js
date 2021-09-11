@@ -1,10 +1,13 @@
-import styled from "styled-components";
 
-export const Nav = styled.nav`
-    background: #FFE600;
-    color: #333333;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0px;
-    z-index: 12;
-`;
+export const Nav = {
+    background: '#FFE600',
+    color: '#333333',
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '10px 0px',
+    zIndex: '12'
+}
+
+export const Img = {
+    verticalAlign: 'middle'
+}

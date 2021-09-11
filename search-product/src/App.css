@@ -1,3 +1,7 @@
+* {
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -28,7 +32,8 @@
   color: #61dafb;
 }
 
-input:focus, input:focus-visible {
+input:focus,
+input:focus-visible {
   outline: none;
 }
 

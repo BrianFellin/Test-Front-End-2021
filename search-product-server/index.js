@@ -27,15 +27,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/items", (req, res) => {
-    try {
-        let query = req.query.q;
-
+    let query = req.query.q;
+    try {        
         if (!query) {
             res.statusCode = 404;
             res.json(defaultErrorResponse('La búsqueda no es válida'));
         }
         else {
-            let findProducts = db.findProduct(query, 4);
+            let apiURL = `${req.protocol}:\/\/${req.get('host')}\/api/file\/`;
+            let findProducts = db.findProduct(apiURL, query, 4);
             res.json({
                 author: {
                     name: '',
@@ -54,8 +54,8 @@ app.get("/api/items", (req, res) => {
 app.get('/api/items/:id', function (req, res) {
     try {
         if (req.params.id) {
-
-            let product = db.getById(req.params.id);
+            let apiURL = `${req.protocol}:\/\/${req.get('host')}\/api/file\/`;
+            let product = db.getById(apiURL, req.params.id);
 
             if (product) {
                 res.json({
@@ -72,7 +72,6 @@ app.get('/api/items/:id', function (req, res) {
 
         res.statusCode = 404;
         res.json(defaultErrorResponse('Producto no válido'));
-
     }
     catch (e) {
         res.statusCode = 500;
