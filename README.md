@@ -1,7 +1,7 @@
 # Test-Front-End-2021
-Prueba para Mercado libre
+Prueba para Mercado libre. Esta compuesto por dos partes, el servidor y la página del cliente.
 
-## Server
+## Servidor (search-product-server)
 
 Este proyecto es el servidor creado con express, para ejcutar use:
 
@@ -12,16 +12,16 @@ Ingrese a [http://localhost:3001](http://localhost:3001) para ver.
 
 ## App
 
-Este proyecto es el cliente que consume los datos del servidor, para ejcutar use:
+Este proyecto es el cliente, consume los datos del servidor, para ejcutar use:
 
 ### `npm start`
 
-El servidor correra en el puerto 3001.\
-Ingrese a [http://localhost:3001](http://localhost:3001) para ver.
+La app correra en el puerto 3000.\
+Ingrese a [http://localhost:3000](http://localhost:3000) para ver.
 
 ### `npm i`
 
-Tanto como en el server como en la app antes de ejcutar deberá instalar las dependecias.
+Tanto como en el servidor como en la app antes de ejcutar deberá instalar las dependecias, para eso use npm i
 
 ### `Requistos`
 * Node.js
