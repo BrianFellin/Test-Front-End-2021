@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import { withRouter } from 'react-router-dom';
 import ProductList from '../ProductList/productlist';
 import { SearchBox } from './search-styles';
+import Error from '../Error/error'
 
 class Search extends Component {
     static propTypes = {
@@ -33,7 +34,7 @@ class Search extends Component {
     componentWillMount() {
         this.unlisten = this.props.history.listen((location, action) => {
             let search = this.getSearchParam(location);
-            if(search){
+            if (search) {
                 this._asyncRequest = this.findItems(search);
             }
         });
@@ -51,7 +52,7 @@ class Search extends Component {
 
     render() {
         if (this.state.searchResult) {
-            if (this.state.searchResult.items) {
+            if (this.state.searchResult.items && this.state.searchResult.items.length > 0) {
                 return (
                     <>
                         <div>
@@ -67,7 +68,7 @@ class Search extends Component {
             } else {
                 return (
                     <>
-                        Error
+                        <Error title={'No encontramos lo que buscabas, intenta nuevamente.'} />
                     </>
                 );
             }

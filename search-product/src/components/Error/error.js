@@ -1,23 +1,22 @@
-import React from 'react';
-import icon from  '../../assets/Logo_ML@2x.png';
+import React, { Component } from 'react';
+import icon from '../../assets/Logo_ML@2x.png';
 import Navbar from '../Navbar';
+import { Text } from './error-styles';
 
-const Error = () => {
-    const text = {
-        textAlign: 'center',
-        marginTop: '50px'
+class Error extends Component {
+
+    render() {
+        return (
+            <div>
+                <Navbar />
+                <div style={Text}>
+                    <h2>{this.props.title}</h2>
+                    <br />
+                    <img src={icon} alt="ícono de mercado libre" />
+                </div>
+            </div >
+        );
     }
-
-    return (
-        <div>
-            <Navbar />
-            <div style={text}>
-                <h2>Lo sentimos algo salió mal</h2>                
-                <br />
-                <img src={icon} alt="ícono de mercado libre" />
-            </div>
-        </div>
-    );
 }
 
 export default Error;

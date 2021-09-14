@@ -13,7 +13,7 @@ function App() {
           <Route path="/" render={() => <><Home /></> } exact />
           <Route path="/items/:id" render={() => <><Details /></> }/>
           <Route path="/items" render={() => <><Search /></> } />
-          <Route path="*" render={() => <><Error /></> } />
+          <Route path="*" render={() => <><Error title={'Lo sentimos algo salió mal'} /></> } />
         </Switch>
       </div>
     </BrowserRouter>

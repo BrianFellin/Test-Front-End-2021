@@ -16,10 +16,9 @@ class ProductList extends Component {
         }
     }
 
-    parseNumber(currency, amount, decimals) {
-        let num = parseFloat(`${amount}.${decimals}`);
-        let price = new Intl.NumberFormat(window.navigator.language, { style: "currency", currency: currency }).format(num);
-
+    parseNumber(currency, amount) {
+        let num = parseFloat(`${amount}`);
+        let price = new Intl.NumberFormat(window.navigator.language, { style: "currency", currency: currency, maximumFractionDigits: 0 }).format(num);
         return price.replace(currency, '$');
     }
 
@@ -41,7 +40,7 @@ class ProductList extends Component {
                     <img style={Image} src={product.picture} alt="Imagen del producto" />
                     <div style={Data}>
                         <div style={Price}>
-                            <label>{this.parseNumber(product.price.currency, product.price.amount, product.price.decimals)}</label>
+                            <label>{this.parseNumber(product.price.currency, product.price.amount)}</label>
                             {product.free_shipping ? (<img style={Shipping} src={shipping} alt="Imagen del envío" />) : (<></>)}
                         </div>
                         {/* To-Dd obtener desde el json*/}
